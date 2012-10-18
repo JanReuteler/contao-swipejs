@@ -1,0 +1,46 @@
+
+<div class="<?php echo $this->class; ?> block"<?php echo $this->cssID; ?><?php if ($this->style): ?> style="<?php echo $this->style; ?>"<?php endif; ?>>
+<?php if ($this->headline): ?>
+
+<<?php echo $this->hl; ?>><?php echo $this->headline; ?></<?php echo $this->hl; ?>>
+<?php endif; ?>
+
+<div id="swipejs<?php echo $this->id; ?>" class="slider">
+<ul>
+<?php foreach($this->images as $image): ?>
+<?php if($image['hasLink']): ?>
+<li><a href="<?php echo $image['href']; ?>" title="<?php echo $image['title']; ?>"<?php if($this->fullsize) echo ' target="_blank"'; ?>><img src="<?php echo $image['src']; ?>" alt="<?php echo $image['alt']; ?>"></a></li>
+<?php elseif($this->fullsize): ?>
+<li><a href="<?php echo $image['href']; ?>" title="<?php echo $image['title']; ?>" data-lightbox="swipejs<?php echo $this->id; ?>"><img src="<?php echo $image['src']; ?>" alt="<?php echo $image['alt']; ?>"></a></li>
+<?php else: ?>
+<li><img src="<?php echo $image['src']; ?>" alt="<?php echo $image['alt']; ?>" /></li>
+<?php endif; ?>
+<?php endforeach; ?>
+</ul>
+</div>
+
+<div class="swipe-positions">
+<ul>
+<?php foreach($this->images as $i => $image): ?>
+<li<?php if($i==0): ?> class="active"<?php endif; ?>><a href="#"<?php if($i==0): ?> class="active"<?php endif; ?> onclick="window.swipejs<?php echo $this->id; ?>.slide(<?php echo $i; ?>); return false"><?php echo $i; ?></a></li>
+<?php endforeach; ?>
+</ul>
+</div>
+
+</div>
+
+<?php $GLOBALS['TL_CSS'][] = 'system/modules/swipejs/assets/swipe.min.css'; ?>
+<script src="system/modules/swipejs/assets/swipe.min.js"></script>
+<script>
+window.addEvent('domready', function() {
+	var slider = document.getElementById('swipejs<?php echo $this->id; ?>');
+	var positions = slider.getNext('.swipe-positions');
+	window.swipejs<?php echo $this->id; ?> = new Swipe(slider, {
+		callback: function(e, index, elem) {
+			positions.getElements('li').removeClass('active');
+			positions.getElements('a').removeClass('active');
+			positions.getElement('li:nth-child('+(index+1)+')').addClass('active').getElement('a').addClass('active');
+		}
+	});
+});
+</script>
