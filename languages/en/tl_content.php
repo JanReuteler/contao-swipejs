@@ -30,6 +30,9 @@
 /**
  * Fields
  */
+$GLOBALS['TL_LANG']['tl_content']['swipeSpeed'] = array('Slide-Geschwindigkeit', 'Geben Sie die Slide-Geschwindigkeit in Millisekunden ein.');
+$GLOBALS['TL_LANG']['tl_content']['swipeAuto'] = array('Automatisches Scrolling', 'Geben Sie den Interval in Millisekunden ein, um automatisches Scrolling zu aktivieren.');
+
 $GLOBALS['TL_LANG']['tl_content']['swipeImages'][0] = 'Bilder';
 $GLOBALS['TL_LANG']['tl_content']['swipeImages'][1] = 'Wählen Sie die Bilder für den Slider.';
 $GLOBALS['TL_LANG']['tl_content']['swipeImages']['singleSRC'] = array('Quell-Bild');

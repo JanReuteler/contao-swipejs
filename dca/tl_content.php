@@ -33,7 +33,7 @@ $this->loadDataContainer('tl_style');
 /**
  * Palettes
  */
-$GLOBALS['TL_DCA']['tl_content']['palettes']['swipejs'] = '{type_legend},type,headline;{image_legend},swipeImages,size,fullsize;{protected_legend:hide},protected;{expert_legend:hide},guests,cssID,space';
+$GLOBALS['TL_DCA']['tl_content']['palettes']['swipejs'] = '{type_legend},type,headline;{image_legend},swipeImages,size,fullsize,swipeSpeed,swipeAuto;{protected_legend:hide},protected;{expert_legend:hide},guests,cssID,space';
 
 
 /**
@@ -78,3 +78,18 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['swipeImages'] = array
 	),
 );
 
+$GLOBALS['TL_DCA']['tl_content']['fields']['swipeSpeed'] = array
+(
+	'label'			=> &$GLOBALS['TL_LANG']['tl_content']['swipeSpeed'],
+	'exclude'		=> true,
+	'inputType'		=> 'text',
+	'eval'			=> array('mandatory'=>true, 'rgxp'=>'digit', 'tl_class'=>'clr w50'),
+);
+
+$GLOBALS['TL_DCA']['tl_content']['fields']['swipeAuto'] = array
+(
+	'label'			=> &$GLOBALS['TL_LANG']['tl_content']['swipeAuto'],
+	'exclude'		=> true,
+	'inputType'		=> 'text',
+	'eval'			=> array('mandatory'=>true, 'rgxp'=>'digit', 'tl_class'=>'w50'),
+);
