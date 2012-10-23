@@ -62,13 +62,17 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['swipeImages'] = array
 			(
 				'label'		=> &$GLOBALS['TL_LANG']['tl_content']['swipeImages']['title'],
 				'inputType'	=> 'text',
-				'eval'		=> array('style'=>'width:250px'),
+				'eval'		=> array('style'=>'width:220px'),
 			),
 			'href' => array
 			(
 				'label'		=> &$GLOBALS['TL_LANG']['tl_content']['swipeImages']['href'],
 				'inputType'	=> 'text',
 				'eval'		=> array('rgxp'=>'url', 'class'=>'tl_text_2'),
+				'wizard' => array
+				(
+					array('tl_content', 'pagePicker')
+				)
 			),
 		),
 	),
