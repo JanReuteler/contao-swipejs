@@ -76,6 +76,7 @@ class ContentSwipeJS extends ContentElement
 			}
 
 			$strImage = $this->getImage($arrImage['singleSRC'], $arrSize[0], $arrSize[1], $arrSize[2]);
+			$imgSize = getimagesize(TL_ROOT . '/' . $strImage);
 
 			$arrImages[] = array
 			(
@@ -84,6 +85,7 @@ class ContentSwipeJS extends ContentElement
 				'title'			=> specialchars($arrImage['title']),
 				'src'			=> $strImage,
 				'alt'			=> specialchars($arrImage['title']),
+				'size'			=> $imgSize[3],
 			);
 		}
 
