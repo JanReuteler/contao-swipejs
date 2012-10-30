@@ -9,11 +9,11 @@
 <ul class="swipe-wrap">
 <?php foreach($this->images as $image): ?>
 <?php if($image['hasLink']): ?>
-<li><a href="<?php echo $image['href']; ?>" title="<?php echo $image['title']; ?>"<?php if($this->fullsize) echo ' target="_blank"'; ?>><img src="<?php echo $image['src']; ?>" alt="<?php echo $image['alt']; ?>"<?php echo $image['size']; ?> /></a></li>
+<li style="display:<?php echo ($i==0) ? 'block' : 'none'; ?>"><a href="<?php echo $image['href']; ?>" title="<?php echo $image['title']; ?>"<?php if($this->fullsize) echo ' target="_blank"'; ?>><img src="<?php echo $image['src']; ?>" alt="<?php echo $image['alt']; ?>"<?php echo $image['size']; ?> /></a></li>
 <?php elseif($this->fullsize): ?>
-<li><a href="<?php echo $image['href']; ?>" title="<?php echo $image['title']; ?>" rel="lightbox[swipejs<?php echo $this->id; ?>]"><img src="<?php echo $image['src']; ?>" alt="<?php echo $image['alt']; ?>"<?php echo $image['size']; ?> /></a></li>
+<li style="display:<?php echo ($i==0) ? 'block' : 'none'; ?>"><a href="<?php echo $image['href']; ?>" title="<?php echo $image['title']; ?>" rel="lightbox[swipejs<?php echo $this->id; ?>]"><img src="<?php echo $image['src']; ?>" alt="<?php echo $image['alt']; ?>"<?php echo $image['size']; ?> /></a></li>
 <?php else: ?>
-<li><img src="<?php echo $image['src']; ?>" alt="<?php echo $image['alt']; ?>"<?php echo $image['size']; ?> /></li>
+<li style="display:<?php echo ($i==0) ? 'block' : 'none'; ?>"><img src="<?php echo $image['src']; ?>" alt="<?php echo $image['alt']; ?>"<?php echo $image['size']; ?> /></li>
 <?php endif; ?>
 <?php endforeach; ?>
 </ul>
