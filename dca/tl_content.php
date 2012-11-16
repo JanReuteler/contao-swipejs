@@ -33,7 +33,7 @@ $this->loadDataContainer('tl_style');
 /**
  * Palettes
  */
-$GLOBALS['TL_DCA']['tl_content']['palettes']['swipejs'] = '{type_legend},type,headline;{image_legend},swipeImages,size,fullsize,swipeSpeed,swipeAuto;{protected_legend:hide},protected;{expert_legend:hide},guests,cssID,space';
+$GLOBALS['TL_DCA']['tl_content']['palettes']['swipejs'] = '{type_legend},type,headline;{image_legend},swipeImages,size,fullsize,swipeSpeed,swipeAuto;{protected_legend:hide},protected;{expert_legend:hide},guests,start,stop,cssID,space';
 
 
 /**
