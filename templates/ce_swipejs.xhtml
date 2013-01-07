@@ -34,7 +34,7 @@
 <script type="text/javascript">
 <!--//--><![CDATA[//><!--
 window.addEvent('domready', function() {
-	var slider = document.getElementById('swipejs<?php echo $this->id; ?>');
+	var slider = document.id('swipejs<?php echo $this->id; ?>');
 	var positions = slider.getNext('.swipe-positions');
 	window.swipejs<?php echo $this->id; ?> = new Swipe(slider, {
 <?php if ($this->swipeSpeed > 0): ?>
